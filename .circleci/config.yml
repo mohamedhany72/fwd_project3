@@ -43,10 +43,7 @@ jobs:
             sudo pip install awsebcli --upgrade
       - run:
             name: Deploying
-            command: cd udagram-api && eb deploy Udagram-env
-      - run:
-            name: set EB ENVs
-            command: npm run setEnv
+            command: cd udagram-api && eb deploy Udagram-env && npm run setEnv
 
 workflows:
     build-and-deploy:
