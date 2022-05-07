@@ -1,6 +1,6 @@
 global:
-  environment: Imreszie3-env
-  application_name: imreszie3
+  environment: Udagram-env
+  application_name: udagram
   default_platform: Node.js
   default_region: us-east-1
 

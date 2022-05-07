@@ -1,0 +1,10 @@
+.elsaticbeanstalk
+node_modules
+src
+.ENV
+.env
+.eslintrc.json
+.npmrc
+package-look.json
+tsconfig.json
+tslint.json

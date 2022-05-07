@@ -31,12 +31,16 @@ jobs:
           command: |
             npm run backend:build
       - run:
+          name: Front-End Host on s3
+          command: | 
+            aws s3 cp --recursive --acl public-read ./udagram-frontend/www s3://udagram99/
+      - run:
           name: Installing deployment dependencies
           command: |
             sudo apt-get -y -qq update
             sudo apt-get install python3-pip python3-dev build-essential
             sudo pip install --upgrade setuptools
             sudo pip install awsebcli --upgrade
-      # - run:
-      #       name: Deploying
-      #       command: eb deploy Imreszie3-env
+      - run:
+            name: Deploying
+            command: cd udagram-api && eb deploy Udagram-env
