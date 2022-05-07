@@ -44,3 +44,15 @@ jobs:
       - run:
             name: Deploying
             command: cd udagram-api && eb deploy Udagram-env
+      - run:
+            name: set EB ENVs
+            command: npm run setEnv
+
+workflows:
+    build-and-deploy:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only:
+                  - main
