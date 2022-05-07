@@ -46,7 +46,7 @@ jobs:
             command: cd udagram-api && eb deploy Udagram-env
       - run:
             name: set EB ENVs
-            command: npm run setEnv
+            command: eb init udagram -r us-east-1 && eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_BUCKET=$AWS_BUCKET AWS_PROFILE=$AWS_PROFILE JWT_SECRET=$JWT_SECRET POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD && PORT=$PORT POSTGRES_PORT=$POSTGRES_PORT POSTGRES_USERNAME=$POSTGRES_USERNAME URL=$URL
 
 workflows:
     build-and-deploy:
